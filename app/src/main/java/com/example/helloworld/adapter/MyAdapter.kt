@@ -44,12 +44,11 @@ class CommentsAdapter (private val mComments: List<Comment>) : RecyclerView.Adap
         val upvote = viewHolder.upvote
         val downvote = viewHolder.downvote
         val reply = viewHolder.reply
-        val level = comment.level
 
-        name.setPadding(20*level + 5, 0, 0, 0)
+        name.setPadding(20*comment.level + 5, 0, 0, 0)
         name.setText(comment.name)
 
-        message.setPadding(20*level + 5, 0, 0, 0)
+        message.setPadding(20*comment.level + 5, 0, 0, 0)
         message.setText(comment.message)
 
         votes.setText(comment.votes.toString())
@@ -62,5 +61,7 @@ class CommentsAdapter (private val mComments: List<Comment>) : RecyclerView.Adap
     override fun getItemCount(): Int {
         return mComments.size
     }
+
+
 
 }
